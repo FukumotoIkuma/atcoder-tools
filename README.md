@@ -452,8 +452,8 @@ seq = "{name} = [{default}] * ({length})"
 
 # 宣言と確保
 [declare_and_allocate]
-seq = "{name} = [{default}] * ({length})  # type: \"List[{type}]\""
-self.declare_and_allocate_2d_seq = "{name} = [[{default}] * ({length_j}) for _ in {length_i}]  # type: \"List[List[{type}]]\""
+seq = "{name} = [{default}] * ({length})  # type: list[{type}]"
+self.declare_and_allocate_2d_seq = "{name} = [[{default}] * ({length_j}) for _ in {length_i}]  # type: list[list[{type}]]"
 
 # 入力関数
 [input_func]
@@ -480,16 +480,16 @@ seq = "{name} = [{input_func} for _ in range({length})]"
 
 # 宣言と確保と入力
 [declare_and_allocate_and_input]
-seq = "{name} = [{input_func} for _ in range({length})]  # type: \"List[{type}]\""
-2d_seq = "{name} = [[{input_func} for _ in range({length_j})] for _ in range({length_i})]  # type: \"List[List[{type}]]\""
+seq = "{name} = [{input_func} for _ in range({length})]  # type: list[{type}]"
+2d_seq = "{name} = [[{input_func} for _ in range({length_j})] for _ in range({length_i})]  # type: list[list[{type}]]"
 
 # 引数
 [arg]
 int = "{name}: int"
 float = "{name}: float"
 str = "{name}: str"
-seq = "{name}: \"List[{type}]\""
-2d_seq = "{name}: \"List[List[{type}]]\""
+seq = "{name}: list[{type}]"
+2d_seq = "{name}: list[list[{type}]]"
 
 # 配列アクセス
 [access]
