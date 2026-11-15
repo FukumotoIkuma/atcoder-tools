@@ -448,12 +448,12 @@ seq = ""
 # 確保
 [allocate]
 seq = "{name} = [{default}] * ({length})"
-2d_seq = "{name} = [[{default}] * ({length_j}) for _ in {length_i}]"
+2d_seq = "{name} = [[{default}] * ({length_j}) for _ in range({length_i})]"
 
 # 宣言と確保
 [declare_and_allocate]
 seq = "{name} = [{default}] * ({length})  # type: list[{type}]"
-self.declare_and_allocate_2d_seq = "{name} = [[{default}] * ({length_j}) for _ in {length_i}]  # type: list[list[{type}]]"
+2d_seq = "{name} = [[{default}] * ({length_j}) for _ in range({length_i})]  # type: list[list[{type}]]"
 
 # 入力関数
 [input_func]

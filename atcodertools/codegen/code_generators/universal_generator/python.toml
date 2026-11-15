@@ -39,13 +39,13 @@ seq = ""
 3d_seq = ""
 [allocate]
 seq = "{name} = [{default}] * ({length})"
-2d_seq = "{name} = [[{default}] * ({length_j}) for _ in {length_i}]"
+2d_seq = "{name} = [[{default}] * ({length_j}) for _ in range({length_i})]"
 
 # 宣言と確保
 3d_seq = "{name} = [[[{default}] * ({length_k}) for _ in range({length_j})] for _ in range({length_i})]"
 [declare_and_allocate]
 seq = "{name} = [{default}] * ({length})  # type: list[{type}]"
-self.declare_and_allocate_2d_seq = "{name} = [[{default}] * ({length_j}) for _ in {length_i}]  # type: list[list[{type}]]"
+2d_seq = "{name} = [[{default}] * ({length_j}) for _ in range({length_i})]  # type: list[list[{type}]]"
 
 # 入力関数
 3d_seq = "{name} = [[[{default}] * ({length_k}) for _ in range({length_j})] for _ in range({length_i})] # type: list[list[list[{type}]]]"
